@@ -1,5 +1,9 @@
 # Snut
 
+Another paste bin with a clean and minimalist ui.
+
+![screenshot](./.github/screenshot.png)
+
 ## Roadmap
 
 - [ ] Setup a linter
