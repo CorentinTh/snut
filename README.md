@@ -10,18 +10,22 @@ Unordered list of future features
 
 - [x] Auto delete after time period
 - [x] Set env variables for config
+- [ ] Add a favicon
+- [ ] Create a logo
 - [ ] Docker image
 - [ ] DB encryption
 - [ ] Different db adapters
 - [ ] Setup a demo instance
 - [ ] Limit content size
 - [ ] Global (admin) password to acces the app
+- [ ] Og social images
 
 Concerning the code
 
 - [ ] Params validation
 - [ ] Setup a linter
 - [ ] Better code splitting
+- [ ] Add a proper logger
 
 ## Contribute
 
