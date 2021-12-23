@@ -2,6 +2,8 @@
 
 Another pastebin with a clean and minimalist ui. Made for selfhosting.
 
+Disclamer: still WIP
+
 ![screenshot](./.github/screenshot.png)
 
 ## Features and roadmap
