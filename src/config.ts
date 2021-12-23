@@ -31,11 +31,13 @@ const config = convict({
     doc: 'The duration in ms before an entry is outdated.',
     format: Number,
     default: 60 * 60 * 1000, // 1h
+    env: 'MS_BEFORE_OUTDATED',
   },
   checkOutdatedCron: {
     doc: 'The interval to check if an entry has become outdated.',
     format: 'cron',
     default: '* * * * *', // Every 1 minutes
+    env: 'CHECK_OUTDATED_CRON',
   },
   db: {
     path: {
@@ -43,6 +45,20 @@ const config = convict({
       format: String,
       default: './db.sqlite',
       env: 'DB_PATH',
+    },
+  },
+  rateLimit: {
+    windowsMs: {
+      doc: 'Timeframe for which requests are checked/remembered.',
+      format: Number,
+      default: 30 * 60 * 1000,
+      env: 'RATELIMIT_WINDOW_MS',
+    },
+    max: {
+      doc: 'Max number of connections during windowMs milliseconds before sending a 429 response.',
+      format: Number,
+      default: 20,
+      env: 'RATELIMIT_MAX_CONNECTIONS',
     },
   },
 });

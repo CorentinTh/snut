@@ -12,10 +12,7 @@ cron.schedule(config.get('checkOutdatedCron'), () => {
 
 const router = Router();
 const idLength = 12;
-const limiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1h
-  max: 20,
-});
+const limiter = rateLimit(config.get('rateLimit'));
 
 router.get('/', (_, res) => {
   res.render('create');
@@ -30,7 +27,7 @@ router.post('/create', limiter, (req, res) => {
   res.redirect('p/' + id);
 });
 
-router.get('/p/:id', (req, res, next) => {
+router.get('/p/:id', limiter, (req, res, next) => {
   const { id } = req.params;
 
   if (!id || id.length !== idLength || !id.match(/[A-Za-z0-9]+/)) return next();
