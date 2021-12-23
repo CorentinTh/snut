@@ -8,7 +8,7 @@ db.exec('CREATE TABLE IF NOT EXISTS entries (id TEXT PRIMARY KEY, content TEXT, 
 interface DBConnector {
   create(args: { id: string; content: string }): void;
   get(args: { id: string }): { content: string };
-  clearOutdated(): void;
+  clearOutdated(): { deleted: number };
 }
 
 const connector: DBConnector = {
@@ -21,8 +21,9 @@ const connector: DBConnector = {
     return { content };
   },
   clearOutdated() {
-    const r = db.prepare('DELETE FROM entries WHERE created_at < ?').run(Date.now() - config.get('millisBeforeOutdated'));
-    console.log({ r });
+    const { changes } = db.prepare('DELETE FROM entries WHERE created_at < ?').run(Date.now() - config.get('millisBeforeOutdated'));
+
+    return { deleted: changes };
   },
 };
 

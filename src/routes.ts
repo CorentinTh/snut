@@ -6,8 +6,11 @@ import cron from 'node-cron';
 import { config } from './config';
 
 cron.schedule(config.get('checkOutdatedCron'), () => {
-  console.log('checkOutdatedCron');
-  connector.clearOutdated();
+  console.log(`Checking outdated entries`);
+  const { deleted } = connector.clearOutdated();
+  if (deleted > 0) {
+    console.log(`Deleted ${deleted} outdated rows.`);
+  }
 });
 
 const router = Router();
