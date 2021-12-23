@@ -14,7 +14,16 @@ const isDev = config.get('env') === 'development';
 app.set('view engine', 'pug');
 app.set('views', join(__dirname, 'views'));
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        'object-src': ["'self'"],
+      },
+    },
+  })
+);
 app.use(logger(isDev ? 'dev' : 'combined'));
 app.use(compression());
 app.use(bodyParser.urlencoded({ extended: false }));
