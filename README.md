@@ -1,17 +1,24 @@
 # Snut
 
-Another paste bin with a clean and minimalist ui.
+Another pastebin with a clean and minimalist ui. Made for selfhosting.
 
 ![screenshot](./.github/screenshot.png)
 
-## Roadmap
+## Features and roadmap
 
+Unordered list of future features
+
+- [ ] Auto delete after time period
 - [ ] Setup a linter
 - [ ] Better code splitting
 - [ ] Params validation
 - [ ] Docker image
 - [ ] Encrypt content before insertion
-- [ ] Set env varriables for config (rate limit, db path)
+- [ ] Set env varriables for config (rate limit, db path, ...)
+- [ ] Different db adapters
+- [ ] Setup a demo instance
+- [ ] Limit content size
+- [ ] Global (admin) password to acces the app
 
 ## Contribute
 
