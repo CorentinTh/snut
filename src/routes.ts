@@ -2,6 +2,13 @@ import { Router } from 'express';
 import { randomBytes } from 'crypto';
 import connector from './db';
 import rateLimit from 'express-rate-limit';
+import cron from 'node-cron';
+import { config } from './config';
+
+cron.schedule(config.get('checkOutdatedCron'), () => {
+  console.log('checkOutdatedCron');
+  connector.clearOutdated();
+});
 
 const router = Router();
 const idLength = 12;

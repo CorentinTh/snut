@@ -1,13 +1,14 @@
 import express from 'express';
 import { join } from 'path';
 import logger from 'morgan';
-import routes from './routes';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import compression from 'compression';
+import routes from './routes';
+import { config } from './config';
 
 const app = express();
-const PORT = process.env.PORT ?? 3000;
+const port = config.get('port');
 
 app.set('view engine', 'pug');
 app.set('views', join(__dirname, 'views'));
@@ -17,15 +18,15 @@ app.use(logger('dev'));
 app.use(compression());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use((_, res, next) => {
-  // res.locals.version = 'v0'; // TODO replace
+  res.locals.version = 'v' + config.get('version'); // TODO replace
   next();
 });
 
-app.use('/', express.static(join(__dirname, 'public')));
-app.use('/spectre', express.static(join(__dirname, '../node_modules/spectre.css/dist')));
+app.use('/', express.static(join(__dirname, 'public'), { maxAge: 3600000 }));
+app.use('/spectre', express.static(join(__dirname, '../node_modules/spectre.css/dist'), { maxAge: 3600000 }));
 app.use('/', routes);
 app.use('*', (_, res) => res.render('error'));
 
-app.listen(PORT, () => {
-  console.log(`[server]: Server is running at localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`[server]: Server is running at localhost:${port}`);
 });

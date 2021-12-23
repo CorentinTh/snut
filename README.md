@@ -8,17 +8,20 @@ Another pastebin with a clean and minimalist ui. Made for selfhosting.
 
 Unordered list of future features
 
-- [ ] Auto delete after time period
-- [ ] Setup a linter
-- [ ] Better code splitting
-- [ ] Params validation
+- [x] Auto delete after time period
+- [x] Set env variables for config
 - [ ] Docker image
-- [ ] Encrypt content before insertion
-- [ ] Set env varriables for config (rate limit, db path, ...)
+- [ ] DB encryption
 - [ ] Different db adapters
 - [ ] Setup a demo instance
 - [ ] Limit content size
 - [ ] Global (admin) password to acces the app
+
+Concerning the code
+
+- [ ] Params validation
+- [ ] Setup a linter
+- [ ] Better code splitting
 
 ## Contribute
 
