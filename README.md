@@ -39,21 +39,43 @@ To contribute to this project, first clone this repo
 git clone git@github.com:cauctus/projo.git
 ```
 
-Then install the dependencies
+### Installation
 
 ```bash
-npm i
+$ npm install
 ```
 
-Then start the dev server
+### Running the app
 
 ```bash
-npm run dev
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+### Test
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
 ```
 
 ## Credits
 
 Coded with ❤️ by [Corentin Thomasset](https://github.com/CorentinTh).
+
+Name found with ❤️ by [Aimie Tremoureux](https://twitter.com/Aimie39949465).
 
 ## License
 

@@ -97,3 +97,4 @@ prototyping
 *.db
 
 *.sqlite
+*.sqlite-*

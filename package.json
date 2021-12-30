@@ -1,15 +1,8 @@
 {
   "name": "snut",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Pastebin with a clean and minimalist ui.",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts",
-    "build": "tsc && ts-node scripts/copyAssets",
-    "start": "node dist/index.js",
-    "release": "standard-version"
-  },
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CorentinTh/snut.git"
@@ -25,6 +18,22 @@
     "emit",
     "transmit"
   ],
+  "scripts": {
+    "dev": "npm run start:dev",
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
   "funding": "https://github.com/sponsors/CorentinTh",
   "author": "Corentin Th <corentin.thomasset74@gmail.com> (https://github.com/CorentinTh)",
   "license": "MIT",
@@ -33,33 +42,61 @@
   },
   "homepage": "https://github.com/CorentinTh/snut#readme",
   "dependencies": {
-    "better-sqlite3": "^7.4.5",
-    "body-parser": "^1.19.1",
-    "compression": "^1.7.4",
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/core": "^8.0.0",
+    "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/schedule": "^1.0.2",
+    "@nestjs/typeorm": "^8.0.2",
+    "better-sqlite3": "^7.4.6",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
     "convict": "^6.2.1",
-    "cron-validator": "^1.2.1",
-    "express": "^4.17.2",
-    "express-rate-limit": "^5.5.1",
-    "helmet": "^4.6.0",
-    "morgan": "^1.10.0",
-    "node-cron": "^3.0.0",
     "pug": "^3.0.2",
-    "spectre.css": "^0.5.9"
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.2.0",
+    "spectre.css": "^0.5.9",
+    "typeorm": "^0.2.41"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.4.2",
-    "@types/compression": "^1.7.2",
-    "@types/convict": "^6.1.1",
+    "@nestjs/cli": "^8.0.0",
+    "@nestjs/schematics": "^8.0.0",
+    "@nestjs/testing": "^8.0.0",
+    "@types/cron": "^1.7.3",
     "@types/express": "^4.17.13",
-    "@types/express-rate-limit": "^5.1.3",
-    "@types/morgan": "^1.9.3",
-    "@types/node": "^17.0.2",
-    "@types/node-cron": "^3.0.0",
-    "@types/shelljs": "^0.8.10",
-    "nodemon": "^2.0.15",
-    "shelljs": "^0.8.4",
-    "standard-version": "^9.3.2",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "@types/jest": "27.0.2",
+    "@types/node": "^16.0.0",
+    "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.2.5",
+    "prettier": "^2.3.2",
+    "source-map-support": "^0.5.20",
+    "supertest": "^6.1.3",
+    "ts-jest": "^27.0.3",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^3.10.1",
+    "typescript": "^4.3.5"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
   }
 }
