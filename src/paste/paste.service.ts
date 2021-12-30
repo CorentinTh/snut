@@ -3,6 +3,7 @@ import { Paste } from './entities/paste.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Interval } from '@nestjs/schedule';
+import { config } from '../config';
 
 @Injectable()
 export class PasteService {
@@ -25,7 +26,7 @@ export class PasteService {
     return this.pasteRepository.delete(id);
   }
 
-  @Interval(10000) // TODO: config
+  @Interval(config.get('checkOutdatedInterval'))
   async removeOutdated() {
     this.logger.log('Starting cleanup job');
 

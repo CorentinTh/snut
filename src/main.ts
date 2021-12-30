@@ -3,6 +3,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
+import { config } from './config';
 
 async function main() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -14,7 +15,12 @@ async function main() {
 
   app.useGlobalPipes(new ValidationPipe());
 
-  await app.listen(3000);
+  app.use((_, res, next) => {
+    res.locals.version = 'v' + config.get('version');
+    next();
+  });
+
+  await app.listen(config.get('port'));
 }
 
 main();

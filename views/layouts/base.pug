@@ -10,15 +10,22 @@ html(lang='en')
     title Snut - Share text snippets
     link(rel='stylesheet' href='/spectre.min.css')
     link(rel='stylesheet' href='/style.css')
+    link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
+    link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
+    link(rel='manifest' href='/site.webmanifest')
+    link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5')
+    meta(name='msapplication-TileColor' content='#da532c')
+    meta(name='theme-color' content='#ffffff')
 
   body
     header.navbar
         section.navbar-section
-            a.btn.btn-lg.btn-link.text-light(href='/') Snut
+            a.btn.btn-lg.btn-link.text-light.px-0(href='/', aria-label='Snut logo') 
+              object(data="/logo-white.svg", type="image/svg+xml", width="60px", style="pointer-events: none;") Snut
             if version
                 .text-small.text-secondary(style='opacity: 0.4')= version
         section.navbar-center
-            // centered logo or brand
         section.navbar-section
             a.btn.btn-link.text-light(href='https://github.com/CorentinTh/snut', target='_blank', aria-label='github button', rel="noopener") 
                 svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewbox='0 0 24 24' width="24px" height="24px")
