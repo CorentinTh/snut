@@ -32,6 +32,12 @@ const config = convict({
     env: 'CHECK_OUTDATED_MS',
   },
   db: {
+    type: {
+      doc: 'The database type',
+      format: ['sqlite', 'mysql', 'postgres', 'cockroachdb', 'mariadb'],
+      default: 'sqlite',
+      env: 'DB_TYPE',
+    },
     path: {
       doc: 'Sqlite database path.',
       format: String,
