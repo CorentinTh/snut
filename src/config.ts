@@ -1,6 +1,6 @@
 import * as convict from 'convict';
 
-const config = convict({
+export const schema = {
   env: {
     doc: 'The application environment.',
     format: ['production', 'development', 'test'],
@@ -26,7 +26,7 @@ const config = convict({
     env: 'MS_BEFORE_OUTDATED',
   },
   checkOutdatedInterval: {
-    doc: 'The duration in ms before an entry is outdated.',
+    doc: 'The interval in ms to check for outdated.',
     format: Number,
     default: 10 * 1000, // 10s
     env: 'CHECK_OUTDATED_MS',
@@ -59,7 +59,9 @@ const config = convict({
       env: 'THROTTLE_LIMIT',
     },
   },
-});
+};
+
+const config = convict(schema);
 
 config.validate({ allowed: 'strict' });
 

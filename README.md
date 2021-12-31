@@ -10,7 +10,22 @@ Disclamer: still WIP
 
 ### Installation
 
+Install using docker
+
+// TODO: write procedure
+
 ### Configuration
+
+| ENV variable       | Default value | Format                                        | Description                                                                           |
+| ------------------ | ------------- | --------------------------------------------- | ------------------------------------------------------------------------------------- |
+| NODE_ENV           | development   | production, development, test                 | The application environment.                                                          |
+| PORT               | 3000          | port                                          | The port to bind.                                                                     |
+| MS_BEFORE_OUTDATED | 3600000       | Number                                        | The duration in ms before an entry is outdated.                                       |
+| CHECK_OUTDATED_MS  | 10000         | Number                                        | The interval in ms to check for outdated.                                             |
+| DB_TYPE            | sqlite        | sqlite, mysql, postgres, cockroachdb, mariadb | The database type                                                                     |
+| DB_PATH            | ./db.sqlite   | String                                        | Sqlite database path.                                                                 |
+| THROTTLE_TTL       | 1800000       | Number                                        | Timeframe for which requests are checked/remembered.                                  |
+| THROTTLE_LIMIT     | 100           | Number                                        | Max number of connections during windowMs milliseconds before sending a 429 response. |
 
 ## Contribute
 
