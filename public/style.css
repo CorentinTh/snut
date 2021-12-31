@@ -8,12 +8,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  min-height: 100vh;
 }
 
 .navbar {
   width: 100%;
   color: white;
-  margin: auto;
   background-color: #ffffff11;
   padding: 5px 26px;
   border-bottom: 1px solid #00000033;
@@ -48,4 +48,34 @@ textarea {
   border: none !important;
   box-shadow: none !important;
   padding: 26px !important;
+}
+
+.footer {
+  margin-top: auto;
+  background-color: #ffffff11;
+  padding: 13px;
+  color: #ffffff8f;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer > div {
+  margin: 13px;
+}
+
+.footer a {
+  color: #ffffff8f;
+  text-decoration: none;
+  transition: all ease 500ms;
+  border-bottom: 1px solid transparent;
+}
+
+.footer a.simple {
+  border-bottom: 1px dashed #ffffff52;
+}
+
+.footer a:hover {
+  border-bottom: 1px solid #ffffff8f;
 }
