@@ -27,6 +27,8 @@ export class PasteController {
       throw new NotFoundException();
     }
 
+    res.setHeader('X-Robots-Tag', 'noindex, follow');
+
     return paste;
   }
 }
