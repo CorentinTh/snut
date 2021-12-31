@@ -1,7 +1,8 @@
 import { CreatePasteDto } from './dto/paste.dto';
-import { Controller, Get, Post, Render, Param, Body, Res, NotFoundException, UseFilters } from '@nestjs/common';
+import { Controller, Get, Post, Render, Param, Body, Res, NotFoundException, UseFilters, UseGuards } from '@nestjs/common';
 import { NotFoundFilter } from '../filters/not-found.filter';
 import { PasteService } from './paste.service';
+import { ThrottlerGuard } from '@nestjs/throttler';
 
 @Controller()
 export class PasteController {
@@ -12,6 +13,7 @@ export class PasteController {
   root() {}
 
   @Post('create')
+  @UseGuards(ThrottlerGuard)
   async create(@Body() { content }: CreatePasteDto, @Res() res) {
     const { id } = await this.pasteService.create(content);
     return res.redirect(`/p/${id}`);
@@ -20,7 +22,8 @@ export class PasteController {
   @Get('p/:id')
   @Render('view')
   @UseFilters(new NotFoundFilter())
-  async findOne(@Param('id') id: string) {
+  @UseGuards(ThrottlerGuard)
+  async findOne(@Param('id') id: string, @Res() res) {
     const paste = await this.pasteService.findOne(id);
 
     if (!paste) {

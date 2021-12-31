@@ -4,9 +4,21 @@ import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import { config } from './config';
+import * as helmet from 'helmet';
+import * as compression from 'compression';
 
 async function main() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
+
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: { 'object-src': ["'self'"] },
+      },
+    })
+  );
+  app.use(compression());
 
   app.useStaticAssets(join(__dirname, '../node_modules/spectre.css/dist'));
   app.useStaticAssets(join(__dirname, '..', 'public'));

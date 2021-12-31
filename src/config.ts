@@ -39,18 +39,18 @@ const config = convict({
       env: 'DB_PATH',
     },
   },
-  rateLimit: {
-    windowsMs: {
+  throttle: {
+    ttl: {
       doc: 'Timeframe for which requests are checked/remembered.',
       format: Number,
       default: 30 * 60 * 1000,
-      env: 'RATELIMIT_WINDOW_MS',
+      env: 'THROTTLE_TTL',
     },
-    max: {
+    limit: {
       doc: 'Max number of connections during windowMs milliseconds before sending a 429 response.',
       format: Number,
-      default: 20,
-      env: 'RATELIMIT_MAX_CONNECTIONS',
+      default: 100,
+      env: 'THROTTLE_LIMIT',
     },
   },
 });
