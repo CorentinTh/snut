@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 
 import DBModule from './plugins/db.plugin';
@@ -6,7 +6,7 @@ import SchedulerModule from './plugins/scheduler.plugin';
 import { PasteModule } from './paste/paste.module';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { config } from './config';
-
+import { RouteLoggerMiddleware } from './middlewares/route-logger.middleware';
 @Module({
   imports: [
     DBModule,
@@ -24,4 +24,8 @@ import { config } from './config';
     },
   ],
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer): void {
+    consumer.apply(RouteLoggerMiddleware).forRoutes('*');
+  }
+}
