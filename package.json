@@ -54,7 +54,7 @@
     "class-validator": "0.13.2",
     "compression": "1.7.4",
     "convict": "6.2.1",
-    "helmet": "4.6.0",
+    "helmet": "5.0.1",
     "pug": "3.0.2",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
