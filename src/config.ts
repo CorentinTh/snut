@@ -1,4 +1,7 @@
+import { config as dotenv } from 'dotenv';
 import convict from 'convict';
+
+dotenv();
 
 export const schema = {
   env: {
@@ -36,13 +39,19 @@ export const schema = {
       doc: 'The database type',
       format: ['sqlite', 'mysql', 'postgres', 'cockroachdb', 'mariadb'],
       default: 'sqlite',
-      env: 'DB_TYPE',
+      env: 'DATABASE_TYPE',
     },
     path: {
       doc: 'Sqlite database path.',
       format: String,
       default: './db.sqlite',
-      env: 'DB_PATH',
+      env: 'DATABASE_PATH',
+    },
+    url: {
+      doc: 'Database connexion URL.',
+      format: String,
+      default: 'postgres://localhost',
+      env: 'DATABASE_URL',
     },
   },
   throttle: {
@@ -64,5 +73,7 @@ export const schema = {
 const config = convict(schema);
 
 config.validate({ allowed: 'strict' });
+
+console.log(config.getProperties());
 
 export { config };

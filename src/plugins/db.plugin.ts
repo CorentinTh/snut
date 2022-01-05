@@ -13,6 +13,10 @@ function getType() {
 export default TypeOrmModule.forRoot({
   type: getType(),
   database: config.get('db.path'),
+  url: config.get('db.url'),
   autoLoadEntities: true,
   synchronize: true,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });

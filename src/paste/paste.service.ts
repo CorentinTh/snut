@@ -33,7 +33,7 @@ export class PasteService {
     const { affected } = await this.pasteRepository
       .createQueryBuilder()
       .delete()
-      .where('createdAt <= :currentDate', { currentDate: Date.now() - 60 * 60 * 1000 }) // TODO: config
+      .where('createdAt <= :currentDate', { currentDate: Date.now() - config.get('millisBeforeOutdated') }) // TODO: config
       .execute();
 
     this.logger.log(`Cleanup job done. Deleted ${affected ?? 0} pastes.`);
