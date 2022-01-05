@@ -98,3 +98,4 @@ prototyping
 
 *.sqlite
 *.sqlite-*
+*.tsbuildinfo

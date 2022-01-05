@@ -1,5 +1,5 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { config } from 'src/config';
+import { config } from '../config';
 
 const dbTypeMap = {
   sqlite: 'better-sqlite3',
