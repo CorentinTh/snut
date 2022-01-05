@@ -4,8 +4,8 @@ import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import { config } from './config';
-import * as helmet from 'helmet';
-import * as compression from 'compression';
+import helmet from 'helmet';
+import compression from 'compression';
 
 async function main() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
