@@ -1,4 +1,4 @@
-import { Body, Controller, Get, NotFoundException, Param, Post, Render, Res, UseFilters, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, NotFoundException, Param, Post, Query, Render, Req, Res, UseFilters, UseGuards } from '@nestjs/common';
 import { ThrottlerGuard } from '@nestjs/throttler';
 import { NotFoundFilter } from '../filters/not-found.filter';
 import { CreatePasteDto } from './dto/paste.dto';
@@ -16,15 +16,17 @@ export class PasteController {
   @UseGuards(ThrottlerGuard)
   async create(@Body() { content }: CreatePasteDto, @Res() res) {
     const { id } = await this.pasteService.create(content);
-    return res.redirect(`/p/${id}`);
+    return res.redirect(`/p/${id}?created=true`);
   }
 
   @Get('p/:id')
   @Render('view')
   @UseFilters(new NotFoundFilter())
   @UseGuards(ThrottlerGuard)
-  async findOne(@Param('id') id: string, @Res() res) {
+  async findOne(@Param('id') id: string, @Query() query, @Req() req, @Res() res) {
     const paste = await this.pasteService.findOne(id);
+    const isJustCreated = 'created' in query;
+    const url = `${req.protocol}://${req.get('Host')}${req.originalUrl.split('?')[0]}`;
 
     if (!paste) {
       throw new NotFoundException();
@@ -32,6 +34,6 @@ export class PasteController {
 
     res.setHeader('X-Robots-Tag', 'noindex, follow');
 
-    return { paste };
+    return { paste, isJustCreated, url };
   }
 }
