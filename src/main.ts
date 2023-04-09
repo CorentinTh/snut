@@ -1,11 +1,12 @@
-import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
-import { AppModule } from './app.module';
+import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import { join } from 'path';
-import { config } from './config';
-import helmet from 'helmet';
 import compression from 'compression';
+import helmet from 'helmet';
+import { join } from 'path';
+import { AppModule } from './app.module';
+import { config } from './config';
+import { formatDuration } from './shared/duration';
 
 async function main() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -16,7 +17,7 @@ async function main() {
         useDefaults: true,
         directives: { 'object-src': ["'self'"] },
       },
-    })
+    }),
   );
   app.use(compression());
 
@@ -29,6 +30,7 @@ async function main() {
 
   app.use((_, res, next) => {
     res.locals.version = 'v' + config.get('version');
+    res.locals.ttl = formatDuration(config.get('millisBeforeOutdated'));
     next();
   });
 

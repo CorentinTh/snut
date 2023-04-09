@@ -1,8 +1,8 @@
-import { CreatePasteDto } from './dto/paste.dto';
-import { Controller, Get, Post, Render, Param, Body, Res, NotFoundException, UseFilters, UseGuards } from '@nestjs/common';
-import { NotFoundFilter } from '../filters/not-found.filter';
-import { PasteService } from './paste.service';
+import { Body, Controller, Get, NotFoundException, Param, Post, Render, Res, UseFilters, UseGuards } from '@nestjs/common';
 import { ThrottlerGuard } from '@nestjs/throttler';
+import { NotFoundFilter } from '../filters/not-found.filter';
+import { CreatePasteDto } from './dto/paste.dto';
+import { PasteService } from './paste.service';
 
 @Controller()
 export class PasteController {
@@ -32,6 +32,6 @@ export class PasteController {
 
     res.setHeader('X-Robots-Tag', 'noindex, follow');
 
-    return paste;
+    return { paste };
   }
 }

@@ -1,9 +1,8 @@
 extends layouts/base.pug
 
 block content
-  .card
-    .card-header.text-center
-      .card-title.text-dark.h2= title || 'Error 404' 
-      .card-subtitle.text-gray= text || "Sorry but the page you are looking for doesn't existe or has expired " 
-      a.btn.btn-primary.my-2(href="/") Home 
-    object(data="/startled.svg", type="image/svg+xml") 
+  .error.text-center
+    h2= title || 'Error 404' 
+    div= text || "Sorry but the page you are looking for doesn't existe or has expired." 
+    div Created paste expire after #{ttl}.
+    a.btn.btn-primary.my-2(href="/") Home 
