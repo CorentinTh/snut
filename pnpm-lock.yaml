@@ -32,8 +32,8 @@ dependencies:
     specifier: 1.7.4
     version: 1.7.4
   convict:
-    specifier: 6.2.1
-    version: 6.2.1
+    specifier: 6.2.4
+    version: 6.2.4
   dotenv:
     specifier: 10.0.0
     version: 10.0.0
@@ -2486,8 +2486,8 @@ packages:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==}
     dev: true
 
-  /convict@6.2.1:
-    resolution: {integrity: sha512-Mn4AJiYkR3TAZH1Xm/RU7gFS/0kM5TBSAQDry8y40Aez0ASY+3boUhv+3QE5XbOXiXM2JjdhkKve3IsBvWCibQ==}
+  /convict@6.2.4:
+    resolution: {integrity: sha512-qN60BAwdMVdofckX7AlohVJ2x9UvjTNoKVXCL2LxFk1l7757EJqf1nySdMkPQer0bt8kQ5lQiyZ9/2NvrFBuwQ==}
     engines: {node: '>=6'}
     dependencies:
       lodash.clonedeep: 4.5.0
