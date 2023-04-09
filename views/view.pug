@@ -4,6 +4,11 @@ block head
   meta(name='robots', content='noindex')
 
 block content
+  if isJustCreated
+    .share 
+      | Share this snippet with this url: 
+      .url= url
   .card.padded
     .content= paste.content
+
 

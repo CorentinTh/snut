@@ -38,6 +38,12 @@ body {
   padding: 26px;
 }
 
+@media only screen and (max-width: 600px) {
+  .content-wrapper {
+    margin-top: 0;
+  }
+}
+
 .card {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
@@ -87,7 +93,7 @@ textarea {
 .creation-details {
   color: #ffffff8f;
   text-align: center;
-  margin-top:26px;
+  margin-top: 26px;
 }
 
 .content {
@@ -95,15 +101,25 @@ textarea {
 }
 
 .error {
-  color: #fff
+  color: #fff;
 }
 
 .error a {
   border: none;
-  background-color:  #ffffff1f !important;
+  background-color: #ffffff1f !important;
 }
 
 .error a:hover {
   border: none;
   background-color: initial !important;
+}
+
+.share {
+  color: #ffffff8f;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.share .url {
+  color: #ffffff;
 }
