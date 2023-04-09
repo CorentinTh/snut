@@ -4,6 +4,7 @@ block content
   .card
     form(action='/create', method='post')
       .form-group
-        textarea.form-input(placeholder='Content...', rows='10', name='content', contenteditable=true, required)
+        textarea.form-input(placeholder='Content to share...', rows='10', name='content', contenteditable=true, required)
       .form-group.padded
         button.btn.btn-block.btn-primary(type='submit') Create
+  .creation-details Created paste will expire in #{ttl}
