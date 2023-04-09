@@ -2,8 +2,6 @@
 
 Another pastebin with a clean and minimalist ui. Made for selfhosting.
 
-Disclamer: still WIP
-
 ![screenshot](./.github/screenshot.png)
 
 ## Host your instance
@@ -11,8 +9,6 @@ Disclamer: still WIP
 ### Installation
 
 Install using docker
-
-// TODO: write procedure
 
 ### Configuration
 
@@ -34,46 +30,34 @@ Install using docker
 To contribute to this project, first clone this repo
 
 ```bash
-git clone git@github.com:cauctus/projo.git
+git clone git@github.com:CorentinTh/snut.git
 ```
 
 ### Installation
 
 ```bash
-$ npm install
+pnpm i
 ```
 
 ### Running the app
 
 ```bash
 # development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+pnpm dev
 ```
 
 ### Test
 
 ```bash
 # unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+pnpm  test
 ```
 
 ## Credits
 
 Coded with ❤️ by [Corentin Thomasset](https://github.com/CorentinTh).
 
-Name found with ❤️ by [Aimie Tremoureux](https://twitter.com/Aimie39949465).
+Name found with ❤️ by [Aimie Tremoureux](https://twitter.com/dwenna_art).
 
 ## License
 
