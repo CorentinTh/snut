@@ -11,16 +11,20 @@ body {
   min-height: 100vh;
 }
 
-.navbar {
+.navigation {
   width: 100%;
   color: white;
   background-color: #ffffff11;
   padding: 5px 26px;
   border-bottom: 1px solid #00000033;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar-section {
+.navigation-section {
   align-items: baseline !important;
+  display: flex;
 }
 
 .page-wrapper {
@@ -78,4 +82,28 @@ textarea {
 
 .footer a:hover {
   border-bottom: 1px solid #ffffff8f;
+}
+
+.creation-details {
+  color: #ffffff8f;
+  text-align: center;
+  margin-top:26px;
+}
+
+.content {
+  font-family: monospace;
+}
+
+.error {
+  color: #fff
+}
+
+.error a {
+  border: none;
+  background-color:  #ffffff1f !important;
+}
+
+.error a:hover {
+  border: none;
+  background-color: initial !important;
 }
