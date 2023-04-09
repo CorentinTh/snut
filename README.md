@@ -2,13 +2,17 @@
 
 Another pastebin with a clean and minimalist ui. Made for selfhosting.
 
+Use it online : [snut.thomasset.co](https://snut.thomasset.co/)
+
 ![screenshot](./.github/screenshot.png)
 
 ## Host your instance
 
 ### Installation
 
-Install using docker
+```shell
+docker run -d --restart unless-stopped -v $(pwd)/db:/app/db -e DATABASE_PATH=/app/db/db.sqlite -p 3000:3000 --name snut corentinth/snut:latest
+```
 
 ### Configuration
 

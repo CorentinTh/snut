@@ -1,19 +1,12 @@
-version: '3'
-
+version: '3.9'
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        - NODE_ENV=production
-    environment:
-      - PORT=3000
-      - DATABASE_PATH=/usr/src/app/db/db.sqlite
+  snut:
+    image: 'corentinth/snut:latest'
+    container_name: snut
     ports:
-      - 3000:3000
+      - '3000:3000'
+    environment:
+      - DATABASE_PATH=/app/db/db.sqlite
     volumes:
-      - ./test-db:/usr/src/app/db
+      - '.db:/app/db'
     restart: unless-stopped
-volumes:
-  test-db:

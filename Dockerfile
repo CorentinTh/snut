@@ -1,31 +1,20 @@
-FROM node:16-alpine as development
-
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN npm install
-RUN apk add --update sqlite
-
+FROM node:16.20-alpine AS build
+WORKDIR /app
+RUN npm install -g pnpm
+RUN apk add --update python3 make g++ sqlite && rm -rf /var/cache/apk/*
 COPY . .
+RUN pnpm i --frozen-lockfile
+RUN pnpm build
 
-RUN npm run build
-
-FROM node:16-alpine as production
-
+FROM node:16.20-alpine as production
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
-
-WORKDIR /usr/src/app
-
-RUN apk add --update sqlite
-
-COPY package*.json ./
-
-RUN npm install --only=production
-
-COPY . .
-
-COPY --from=development /usr/src/app/dist ./dist
-
-CMD ["node", "dist/main"]
+WORKDIR /app
+RUN apk add --update sqlite && rm -rf /var/cache/apk/*
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/package*.json ./
+COPY --from=build /app/views ./views
+COPY --from=build /app/public ./public
+EXPOSE 3000
+CMD ["npm", "start"]
