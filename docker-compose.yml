@@ -9,6 +9,11 @@ services:
         - NODE_ENV=production
     environment:
       - PORT=3000
+      - DATABASE_PATH=/usr/src/app/db/db.sqlite
     ports:
       - 3000:3000
+    volumes:
+      - ./test-db:/usr/src/app/db
     restart: unless-stopped
+volumes:
+  test-db:
