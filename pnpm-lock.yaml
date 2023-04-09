@@ -82,8 +82,8 @@ devDependencies:
     specifier: 1.7.3
     version: 1.7.3
   '@types/express':
-    specifier: 4.17.13
-    version: 4.17.13
+    specifier: 4.17.17
+    version: 4.17.17
   '@types/jest':
     specifier: 27.0.2
     version: 27.0.2
@@ -1140,7 +1140,7 @@ packages:
   /@types/compression@1.7.2:
     resolution: {integrity: sha512-lwEL4M/uAGWngWFLSG87ZDr2kLrbuR8p7X+QZB1OQlT+qkHsCPDVFnHPyXf4Vyl4yDDorNY+mAhosxkCvppatg==}
     dependencies:
-      '@types/express': 4.17.13
+      '@types/express': 4.17.17
     dev: true
 
   /@types/connect@3.4.35:
@@ -1196,8 +1196,8 @@ packages:
       '@types/range-parser': 1.2.4
     dev: true
 
-  /@types/express@4.17.13:
-    resolution: {integrity: sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA==}
+  /@types/express@4.17.17:
+    resolution: {integrity: sha512-Q4FmmuLGBG58btUnfS1c1r/NQdlp3DMfGDGig8WhfpA2YRUtEkxAjkZb0yvplJGYdF1fsQ81iMDcH24sSCNC/Q==}
     dependencies:
       '@types/body-parser': 1.19.2
       '@types/express-serve-static-core': 4.17.33
