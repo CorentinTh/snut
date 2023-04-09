@@ -7,17 +7,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - uses: actions/checkout@v3
+      - run: corepack enable
 
       - name: Setup node env
-        uses: actions/setup-node@v2.5.1
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        run: npm ci --prefer-offline --no-audit
+        run: pnpm i
+
+      - name: Test
+        run: pnpm test
 
       - name: Build the app
-        run: npm run build
+        run: pnpm build
