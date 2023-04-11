@@ -98,6 +98,7 @@ textarea {
 
 .content {
   font-family: monospace;
+  overflow-x: auto;
 }
 
 .error {
