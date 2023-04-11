@@ -11,7 +11,7 @@ Use it online : [snut.thomasset.co](https://snut.thomasset.co/)
 ### Installation
 
 ```shell
-docker run -d --restart unless-stopped -v $(pwd)/db:/app/db -e DATABASE_PATH=/app/db/db.sqlite -p 3000:3000 --name snut corentinth/snut:latest
+docker run -d --restart unless-stopped -v $(pwd)/db:/app/db -e DATABASE_PATH=/app/db/db.sqlite -p 3000:3000 --name snut corentinth/snut:nightly
 ```
 
 ### Configuration
