@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@nestjs/common':
     specifier: 8.2.4
@@ -68,7 +72,7 @@ devDependencies:
     version: 8.1.6(eslint@8.5.0)
   '@nestjs/schematics':
     specifier: 8.0.5
-    version: 8.0.5(chokidar@3.5.2)(typescript@4.3.5)
+    version: 8.0.5(typescript@4.5.4)
   '@nestjs/testing':
     specifier: 8.2.4
     version: 8.2.4(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(@nestjs/platform-express@8.2.4)
@@ -91,8 +95,8 @@ devDependencies:
     specifier: 16.11.19
     version: 16.11.19
   '@types/supertest':
-    specifier: 2.0.11
-    version: 2.0.11
+    specifier: 2.0.16
+    version: 2.0.16
   '@typescript-eslint/eslint-plugin':
     specifier: 5.9.0
     version: 5.9.0(@typescript-eslint/parser@5.9.0)(eslint@8.5.0)(typescript@4.5.4)
@@ -982,6 +986,21 @@ packages:
       - chokidar
     dev: true
 
+  /@nestjs/schematics@8.0.5(typescript@4.5.4):
+    resolution: {integrity: sha512-nK1hWQeLNbdhsiJDX/XJXLqq7nC6/xxC8CN+seFTQmly+H3gG2xaFnl6JPHURumuQaYJX8JEpC8m0+4tz+wvOg==}
+    peerDependencies:
+      typescript: ^3.4.5 || ^4.3.5
+    dependencies:
+      '@angular-devkit/core': 13.0.2(chokidar@3.5.2)
+      '@angular-devkit/schematics': 13.0.2(chokidar@3.5.2)
+      fs-extra: 10.0.0
+      jsonc-parser: 3.0.0
+      pluralize: 8.0.0
+      typescript: 4.5.4
+    transitivePeerDependencies:
+      - chokidar
+    dev: true
+
   /@nestjs/testing@8.2.4(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(@nestjs/platform-express@8.2.4):
     resolution: {integrity: sha512-kRpLbb/y4TFzqP7iuQd3qiCg+auwdnj4qWeBDIW5ugqdnfCjgk/TzlbeTZF08mPYyjvHscg+0bMHri6r0Pm3sQ==}
     peerDependencies:
@@ -1292,8 +1311,8 @@ packages:
       '@types/node': 16.11.19
     dev: true
 
-  /@types/supertest@2.0.11:
-    resolution: {integrity: sha512-uci4Esokrw9qGb9bvhhSVEjd6rkny/dk5PK/Qz4yxKiyppEI+dOPlNrZBahE3i+PoKFYyDxChVXZ/ysS/nrm1Q==}
+  /@types/supertest@2.0.16:
+    resolution: {integrity: sha512-6c2ogktZ06tr2ENoZivgm7YnprnhYE4ZoXGMY+oA7IuAf17M8FWvujXZGmxLv8y0PTyts4x5A+erSwVUFA8XSg==}
     dependencies:
       '@types/superagent': 4.1.16
     dev: true
