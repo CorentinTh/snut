@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@nestjs/common':
     specifier: 8.2.4
@@ -68,7 +72,7 @@ devDependencies:
     version: 8.1.6(eslint@8.5.0)
   '@nestjs/schematics':
     specifier: 8.0.5
-    version: 8.0.5(chokidar@3.5.2)(typescript@4.3.5)
+    version: 8.0.5(typescript@4.5.4)
   '@nestjs/testing':
     specifier: 8.2.4
     version: 8.2.4(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(@nestjs/platform-express@8.2.4)
@@ -133,8 +137,8 @@ devDependencies:
     specifier: 10.4.0
     version: 10.4.0(@types/node@16.11.19)(typescript@4.5.4)
   tsconfig-paths:
-    specifier: 3.12.0
-    version: 3.12.0
+    specifier: 3.15.0
+    version: 3.15.0
   typescript:
     specifier: 4.5.4
     version: 4.5.4
@@ -978,6 +982,21 @@ packages:
       jsonc-parser: 3.0.0
       pluralize: 8.0.0
       typescript: 4.3.5
+    transitivePeerDependencies:
+      - chokidar
+    dev: true
+
+  /@nestjs/schematics@8.0.5(typescript@4.5.4):
+    resolution: {integrity: sha512-nK1hWQeLNbdhsiJDX/XJXLqq7nC6/xxC8CN+seFTQmly+H3gG2xaFnl6JPHURumuQaYJX8JEpC8m0+4tz+wvOg==}
+    peerDependencies:
+      typescript: ^3.4.5 || ^4.3.5
+    dependencies:
+      '@angular-devkit/core': 13.0.2(chokidar@3.5.2)
+      '@angular-devkit/schematics': 13.0.2(chokidar@3.5.2)
+      fs-extra: 10.0.0
+      jsonc-parser: 3.0.0
+      pluralize: 8.0.0
+      typescript: 4.5.4
     transitivePeerDependencies:
       - chokidar
     dev: true
@@ -6421,11 +6440,20 @@ packages:
     dependencies:
       chalk: 4.1.2
       enhanced-resolve: 5.12.0
-      tsconfig-paths: 3.12.0
+      tsconfig-paths: 3.15.0
     dev: true
 
   /tsconfig-paths@3.12.0:
     resolution: {integrity: sha512-e5adrnOYT6zqVnWqZu7i/BQ3BnhzvGbjEjejFXO20lKIKpwTaupkCPgEfv4GZK1IBciJUEhYs3J3p75FdaTFVg==}
+    dependencies:
+      '@types/json5': 0.0.29
+      json5: 1.0.2
+      minimist: 1.2.8
+      strip-bom: 3.0.0
+    dev: true
+
+  /tsconfig-paths@3.15.0:
+    resolution: {integrity: sha512-2Ac2RgzDe/cn48GvOe3M+o82pEFewD3UPbyoUHHdKasHwJKjds4fLXWf/Ux5kATBKN20oaFGu+jbElp1pos0mg==}
     dependencies:
       '@types/json5': 0.0.29
       json5: 1.0.2
