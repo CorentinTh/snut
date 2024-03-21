@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@nestjs/common':
     specifier: 8.2.4
@@ -18,7 +22,7 @@ dependencies:
     version: 2.0.0(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(reflect-metadata@0.1.13)
   '@nestjs/typeorm':
     specifier: 8.0.2
-    version: 8.0.2(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(reflect-metadata@0.1.13)(rxjs@7.5.1)(typeorm@0.2.41)
+    version: 8.0.2(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(reflect-metadata@0.1.13)(rxjs@7.5.1)(typeorm@0.3.0)
   better-sqlite3:
     specifier: 7.4.6
     version: 7.4.6
@@ -59,8 +63,8 @@ dependencies:
     specifier: 0.5.9
     version: 0.5.9
   typeorm:
-    specifier: 0.2.41
-    version: 0.2.41(better-sqlite3@7.4.6)(pg@8.7.1)
+    specifier: 0.3.0
+    version: 0.3.0(better-sqlite3@7.4.6)(pg@8.7.1)
 
 devDependencies:
   '@nestjs/cli':
@@ -68,7 +72,7 @@ devDependencies:
     version: 8.1.6(eslint@8.5.0)
   '@nestjs/schematics':
     specifier: 8.0.5
-    version: 8.0.5(chokidar@3.5.2)(typescript@4.3.5)
+    version: 8.0.5(typescript@4.5.4)
   '@nestjs/testing':
     specifier: 8.2.4
     version: 8.2.4(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(@nestjs/platform-express@8.2.4)
@@ -505,6 +509,13 @@ packages:
       '@babel/core': 7.21.4
       '@babel/helper-plugin-utils': 7.20.2
     dev: true
+
+  /@babel/runtime@7.24.1:
+    resolution: {integrity: sha512-+BIznRzyqBf+2wCTxcKE3wDjfGeCoVE61KSHGpkzqrLi8qxqFwBeUFyId2cxkTmm55fzDGnm0+yCxaxygrLUnQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.1
+    dev: false
 
   /@babel/template@7.20.7:
     resolution: {integrity: sha512-8SegXApWe6VoNw0r9JHpSteLKTpTiLZ4rMlGIm9JQ18KiCtyQiAMEazujAHrUS5flrcqYZa75ukev3P6QmUwUw==}
@@ -982,6 +993,21 @@ packages:
       - chokidar
     dev: true
 
+  /@nestjs/schematics@8.0.5(typescript@4.5.4):
+    resolution: {integrity: sha512-nK1hWQeLNbdhsiJDX/XJXLqq7nC6/xxC8CN+seFTQmly+H3gG2xaFnl6JPHURumuQaYJX8JEpC8m0+4tz+wvOg==}
+    peerDependencies:
+      typescript: ^3.4.5 || ^4.3.5
+    dependencies:
+      '@angular-devkit/core': 13.0.2(chokidar@3.5.2)
+      '@angular-devkit/schematics': 13.0.2(chokidar@3.5.2)
+      fs-extra: 10.0.0
+      jsonc-parser: 3.0.0
+      pluralize: 8.0.0
+      typescript: 4.5.4
+    transitivePeerDependencies:
+      - chokidar
+    dev: true
+
   /@nestjs/testing@8.2.4(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(@nestjs/platform-express@8.2.4):
     resolution: {integrity: sha512-kRpLbb/y4TFzqP7iuQd3qiCg+auwdnj4qWeBDIW5ugqdnfCjgk/TzlbeTZF08mPYyjvHscg+0bMHri6r0Pm3sQ==}
     peerDependencies:
@@ -1015,7 +1041,7 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/typeorm@8.0.2(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(reflect-metadata@0.1.13)(rxjs@7.5.1)(typeorm@0.2.41):
+  /@nestjs/typeorm@8.0.2(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(reflect-metadata@0.1.13)(rxjs@7.5.1)(typeorm@0.3.0):
     resolution: {integrity: sha512-UHn4IsRkzm22eNDir/uI+x8gmgo66EO7SxWfVOiPpeLSdrTfZHKYz6q/P9KRgYbwXs8TrywVdIbJhp+4C0tzjQ==}
     peerDependencies:
       '@nestjs/common': ^8.0.0
@@ -1028,7 +1054,7 @@ packages:
       '@nestjs/core': 8.2.4(@nestjs/common@8.2.4)(@nestjs/platform-express@8.2.4)(reflect-metadata@0.1.13)(rxjs@7.5.1)
       reflect-metadata: 0.1.13
       rxjs: 7.5.1
-      typeorm: 0.2.41(better-sqlite3@7.4.6)(pg@8.7.1)
+      typeorm: 0.3.0(better-sqlite3@7.4.6)(pg@8.7.1)
       uuid: 8.3.2
     dev: false
 
@@ -1307,10 +1333,6 @@ packages:
     dependencies:
       '@types/yargs-parser': 21.0.0
     dev: true
-
-  /@types/zen-observable@0.8.3:
-    resolution: {integrity: sha512-fbF6oTd4sGGy0xjHPKAt+eS2CrxJ3+6gQ3FGcBoIJR2TLAyCkCyI8JqZNy+FeON0AhVgNJoUumVoZQjBFUqHkw==}
-    dev: false
 
   /@typescript-eslint/eslint-plugin@5.9.0(@typescript-eslint/parser@5.9.0)(eslint@8.5.0)(typescript@4.5.4):
     resolution: {integrity: sha512-qT4lr2jysDQBQOPsCCvpPUZHjbABoTJW8V9ZzIYKHMfppJtpdtzszDYsldwhFxlhvrp7aCHeXD1Lb9M1zhwWwQ==}
@@ -2578,6 +2600,13 @@ packages:
       whatwg-url: 8.7.0
     dev: true
 
+  /date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.24.1
+    dev: false
+
   /dateformat@3.0.3:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
     dev: true
@@ -2732,9 +2761,9 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /dotenv@8.6.0:
-    resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
-    engines: {node: '>=10'}
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
     dev: false
 
   /dotgitignore@2.1.0:
@@ -5612,6 +5641,10 @@ packages:
   /reflect-metadata@0.1.13:
     resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
 
+  /regenerator-runtime@0.14.1:
+    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
+    dev: false
+
   /regexpp@3.2.0:
     resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==}
     engines: {node: '>=8'}
@@ -6519,25 +6552,26 @@ packages:
   /typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typeorm@0.2.41(better-sqlite3@7.4.6)(pg@8.7.1):
-    resolution: {integrity: sha512-/d8CLJJxKPgsnrZWiMyPI0rz2MFZnBQrnQ5XP3Vu3mswv2WPexb58QM6BEtmRmlTMYN5KFWUz8SKluze+wS9xw==}
+  /typeorm@0.3.0(better-sqlite3@7.4.6)(pg@8.7.1):
+    resolution: {integrity: sha512-fGhJql31DRyxT0bxcjD5kAf9hz+aUppp90M93GmlRlCfHq+qKhY70eCEreAgjrlAYmZkfEgDcyMHpcAfrtCe7A==}
+    engines: {node: '>= 12.9.0'}
     hasBin: true
     peerDependencies:
-      '@sap/hana-client': '*'
-      better-sqlite3: '*'
-      hdb-pool: '*'
-      ioredis: '*'
+      '@sap/hana-client': ^2.11.14
+      better-sqlite3: ^7.1.2
+      hdb-pool: ^0.1.6
+      ioredis: ^4.28.3
       mongodb: ^3.6.0
-      mssql: '*'
-      mysql2: '*'
-      oracledb: '*'
-      pg: '*'
-      pg-native: '*'
-      pg-query-stream: '*'
-      redis: '*'
-      sql.js: '*'
-      sqlite3: '*'
-      typeorm-aurora-data-api-driver: '*'
+      mssql: ^6.3.1
+      mysql2: ^2.2.5
+      oracledb: ^5.1.0
+      pg: ^8.5.1
+      pg-native: ^3.0.0
+      pg-query-stream: ^4.0.0
+      redis: ^3.1.1
+      sql.js: ^1.4.0
+      sqlite3: ^5.0.2
+      typeorm-aurora-data-api-driver: ^2.0.0
     peerDependenciesMeta:
       '@sap/hana-client':
         optional: true
@@ -6576,8 +6610,9 @@ packages:
       buffer: 6.0.3
       chalk: 4.1.2
       cli-highlight: 2.1.11
+      date-fns: 2.30.0
       debug: 4.3.4
-      dotenv: 8.6.0
+      dotenv: 16.4.5
       glob: 7.2.3
       js-yaml: 4.1.0
       mkdirp: 1.0.4
@@ -6585,9 +6620,9 @@ packages:
       reflect-metadata: 0.1.13
       sha.js: 2.4.11
       tslib: 2.5.0
+      uuid: 8.3.2
       xml2js: 0.4.23
       yargs: 17.7.1
-      zen-observable-ts: 1.1.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -7007,14 +7042,3 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
-
-  /zen-observable-ts@1.1.0:
-    resolution: {integrity: sha512-1h4zlLSqI2cRLPJUHJFL8bCWHhkpuXkF+dbGkRaWjgDIG26DmzyshUMrdV/rL3UnR+mhaX4fRq8LPouq0MYYIA==}
-    dependencies:
-      '@types/zen-observable': 0.8.3
-      zen-observable: 0.8.15
-    dev: false
-
-  /zen-observable@0.8.15:
-    resolution: {integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==}
-    dev: false

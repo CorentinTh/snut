@@ -63,7 +63,7 @@
     "rimraf": "3.0.2",
     "rxjs": "7.5.1",
     "spectre.css": "0.5.9",
-    "typeorm": "0.2.41"
+    "typeorm": "0.3.0"
   },
   "devDependencies": {
     "@nestjs/cli": "8.1.6",
