@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@nestjs/common':
     specifier: 8.2.4
@@ -68,7 +72,7 @@ devDependencies:
     version: 8.1.6(eslint@8.5.0)
   '@nestjs/schematics':
     specifier: 8.0.5
-    version: 8.0.5(chokidar@3.5.2)(typescript@4.3.5)
+    version: 8.0.5(typescript@4.5.4)
   '@nestjs/testing':
     specifier: 8.2.4
     version: 8.2.4(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(@nestjs/platform-express@8.2.4)
@@ -79,8 +83,8 @@ devDependencies:
     specifier: 6.1.1
     version: 6.1.1
   '@types/cron':
-    specifier: 1.7.3
-    version: 1.7.3
+    specifier: 2.4.0
+    version: 2.4.0
   '@types/express':
     specifier: 4.17.13
     version: 4.17.13
@@ -982,6 +986,21 @@ packages:
       - chokidar
     dev: true
 
+  /@nestjs/schematics@8.0.5(typescript@4.5.4):
+    resolution: {integrity: sha512-nK1hWQeLNbdhsiJDX/XJXLqq7nC6/xxC8CN+seFTQmly+H3gG2xaFnl6JPHURumuQaYJX8JEpC8m0+4tz+wvOg==}
+    peerDependencies:
+      typescript: ^3.4.5 || ^4.3.5
+    dependencies:
+      '@angular-devkit/core': 13.0.2(chokidar@3.5.2)
+      '@angular-devkit/schematics': 13.0.2(chokidar@3.5.2)
+      fs-extra: 10.0.0
+      jsonc-parser: 3.0.0
+      pluralize: 8.0.0
+      typescript: 4.5.4
+    transitivePeerDependencies:
+      - chokidar
+    dev: true
+
   /@nestjs/testing@8.2.4(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(@nestjs/platform-express@8.2.4):
     resolution: {integrity: sha512-kRpLbb/y4TFzqP7iuQd3qiCg+auwdnj4qWeBDIW5ugqdnfCjgk/TzlbeTZF08mPYyjvHscg+0bMHri6r0Pm3sQ==}
     peerDependencies:
@@ -1159,11 +1178,11 @@ packages:
     resolution: {integrity: sha512-t73xJJrvdTjXrn4jLS9VSGRbz0nUY3cl2DMGDU48lKl+HR9dbbjW2A9r3g40VA++mQpy6uuHg33gy7du2BKpog==}
     dev: true
 
-  /@types/cron@1.7.3:
-    resolution: {integrity: sha512-iPmUXyIJG1Js+ldPYhOQcYU3kCAQ2FWrSkm1FJPoii2eYSn6wEW6onPukNTT0bfiflexNSRPl6KWmAIqS+36YA==}
+  /@types/cron@2.4.0:
+    resolution: {integrity: sha512-5bBaAkqvSFBX8JMi/xCofNzG5E594TNsApMz68dLd/sQYz/HGQqgcxGHTRjOvD4G3Y+YF1Oo3S7QdCvKt1KAJQ==}
+    deprecated: This is a stub types definition. cron provides its own type definitions, so you do not need this installed.
     dependencies:
-      '@types/node': 16.11.19
-      moment: 2.29.4
+      cron: 1.7.2
     dev: true
 
   /@types/eslint-scope@3.7.4:
@@ -2534,7 +2553,6 @@ packages:
     resolution: {integrity: sha512-+SaJ2OfeRvfQqwXQ2kgr0Y5pzBR/lijf5OpnnaruwWnmI799JfWr2jN2ItOV9s3A/+TFOt6mxvKzQq5F0Jp6VQ==}
     dependencies:
       moment-timezone: 0.5.43
-    dev: false
 
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -4792,7 +4810,6 @@ packages:
     resolution: {integrity: sha512-72j3aNyuIsDxdF1i7CEgV2FfxM1r6aaqJyLB2vwb33mXYyoyLly+F1zbWqhA3/bVIoJ4szlUoMbUnVdid32NUQ==}
     dependencies:
       moment: 2.29.4
-    dev: false
 
   /moment@2.29.4:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
