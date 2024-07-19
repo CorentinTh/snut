@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@nestjs/common':
     specifier: 8.2.4
@@ -68,7 +72,7 @@ devDependencies:
     version: 8.1.6(eslint@8.5.0)
   '@nestjs/schematics':
     specifier: 8.0.5
-    version: 8.0.5(chokidar@3.5.2)(typescript@4.3.5)
+    version: 8.0.5(typescript@4.5.4)
   '@nestjs/testing':
     specifier: 8.2.4
     version: 8.2.4(@nestjs/common@8.2.4)(@nestjs/core@8.2.4)(@nestjs/platform-express@8.2.4)
@@ -103,11 +107,11 @@ devDependencies:
     specifier: 8.5.0
     version: 8.5.0
   eslint-config-prettier:
-    specifier: 8.3.0
-    version: 8.3.0(eslint@8.5.0)
+    specifier: 9.1.0
+    version: 9.1.0(eslint@8.5.0)
   eslint-plugin-prettier:
     specifier: 4.0.0
-    version: 4.0.0(eslint-config-prettier@8.3.0)(eslint@8.5.0)(prettier@2.5.1)
+    version: 4.0.0(eslint-config-prettier@9.1.0)(eslint@8.5.0)(prettier@2.5.1)
   jest:
     specifier: 27.4.5
     version: 27.4.5(ts-node@10.4.0)
@@ -978,6 +982,21 @@ packages:
       jsonc-parser: 3.0.0
       pluralize: 8.0.0
       typescript: 4.3.5
+    transitivePeerDependencies:
+      - chokidar
+    dev: true
+
+  /@nestjs/schematics@8.0.5(typescript@4.5.4):
+    resolution: {integrity: sha512-nK1hWQeLNbdhsiJDX/XJXLqq7nC6/xxC8CN+seFTQmly+H3gG2xaFnl6JPHURumuQaYJX8JEpC8m0+4tz+wvOg==}
+    peerDependencies:
+      typescript: ^3.4.5 || ^4.3.5
+    dependencies:
+      '@angular-devkit/core': 13.0.2(chokidar@3.5.2)
+      '@angular-devkit/schematics': 13.0.2(chokidar@3.5.2)
+      fs-extra: 10.0.0
+      jsonc-parser: 3.0.0
+      pluralize: 8.0.0
+      typescript: 4.5.4
     transitivePeerDependencies:
       - chokidar
     dev: true
@@ -2829,8 +2848,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-prettier@8.3.0(eslint@8.5.0):
-    resolution: {integrity: sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==}
+  /eslint-config-prettier@9.1.0(eslint@8.5.0):
+    resolution: {integrity: sha512-NSWl5BFQWEPi1j4TjVNItzYV7dZXZ+wP6I6ZhrBGpChQhZRUaElihE9uRRkcbRnNb76UMKDF3r+WTmNcGPKsqw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -2838,7 +2857,7 @@ packages:
       eslint: 8.5.0
     dev: true
 
-  /eslint-plugin-prettier@4.0.0(eslint-config-prettier@8.3.0)(eslint@8.5.0)(prettier@2.5.1):
+  /eslint-plugin-prettier@4.0.0(eslint-config-prettier@9.1.0)(eslint@8.5.0)(prettier@2.5.1):
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -2850,7 +2869,7 @@ packages:
         optional: true
     dependencies:
       eslint: 8.5.0
-      eslint-config-prettier: 8.3.0(eslint@8.5.0)
+      eslint-config-prettier: 9.1.0(eslint@8.5.0)
       prettier: 2.5.1
       prettier-linter-helpers: 1.0.0
     dev: true
