@@ -1,3 +1,6 @@
+> [!WARNING]  
+> Archived and no longer maintained. Please check [Enclosed](https://github.com/CorentinTh/enclosed/) for an up-to-date alternative.
+
 # Snut
 
 Another pastebin with a clean and minimalist ui. Made for selfhosting.
